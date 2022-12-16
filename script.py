@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-# stolen from https://gist.githubusercontent.com/torchlight/aed4d699e8550d1c29a660ef6472170e/raw/29002e7936015e870db7c2ff0fcdebdbc1ff48e8/pc_fails.py
-
-# original:
-# https://cdn.discordapp.com/attachments/569730957536395274/987419789532229642/pc_fails.py
 
 import requests
 import matplotlib.pyplot as plt
