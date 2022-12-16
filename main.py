@@ -31,7 +31,7 @@ def get_pc_info_for_user(uname):
     if res.status_code != 200:
         print("fail")
         exit()
-    res_soup = BeautifulSoup(res.content, 'html.parser')
+    res_soup = BeautifulSoup(res.content, 'lxml')
 
     #print(res_soup.prettify())
     table = res_soup.find('table')
