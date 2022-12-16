@@ -76,10 +76,11 @@ def show_stats(pc_pieces, uname=None):
     plt.show()
 
 
-if len(sys.argv) != 2:
-    print("Usage: python pc_fails.py <jstris username>")
-    exit()
-uname = sys.argv[1]
-#print(uname)
-pc_nums, pc_pieces = get_pc_info_for_user(uname)
-show_stats(pc_pieces, uname=uname)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python pc_fails.py <jstris username>")
+        exit()
+    uname = sys.argv[1]
+    #print(uname)
+    pc_nums, pc_pieces = get_pc_info_for_user(uname)
+    show_stats(pc_pieces, uname=uname)
