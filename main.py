@@ -5,11 +5,12 @@
 # https://cdn.discordapp.com/attachments/569730957536395274/987419789532229642/pc_fails.py
 
 import requests
+import matplotlib.pyplot as plt
+from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
-from bs4 import BeautifulSoup
+
 import urllib
-import matplotlib.pyplot as plt
 import sys
 
 
