@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
 
-import discord
 import os
-import dotenv
 import sys
+
+import dotenv
+import discord
+from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = discord.Client(intents=intents)
+bot = commands.Bot(command_prefix='.', intents=intents)
 
-@client.event
+
+@bot.event
 async def on_ready():
-    print(f"We have logged in as {client.user}")
+    print(f'Logged in as {bot.user} (ID: {bot.user.id})')
+    print('------')
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
 
-    if message.content.startswith("$hello"):
-        await message.channel.send("Hello!")
+@bot.command()
+async def pcfails(ctx, jstris_player: str):
+    await ctx.send(jstris_player)
+
 
 def main():
     dotenv.load_dotenv()
@@ -29,7 +31,7 @@ def main():
     if token is None:
         sys.exit("No discord bot token in .env file!")
     else:
-        client.run(token)
+        bot.run(token)
 
 if __name__ == "__main__":
     main()
