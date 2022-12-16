@@ -72,8 +72,6 @@ def show_stats(pc_pieces, uname=None):
         plt.title("PC Fails for User " + uname)
     else:
         plt.title("PC Fails")
-    plt.show()
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -82,3 +80,4 @@ if __name__ == "__main__":
     #print(uname)
     pc_nums, pc_pieces = get_pc_info_for_user(uname)
     show_stats(pc_pieces, uname=uname)
+    plt.show()
