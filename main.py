@@ -16,7 +16,7 @@ import sys
 
 def get_pc_info_for_user(uname):
 
-    pc_leaderboard_url = "https://jstris.jezevec10.com/PC-mode?display=5&user=" + uname
+    pc_leaderboard_url = f"https://jstris.jezevec10.com/PC-mode?display=5&user={uname}"
 
     session = requests.Session()
     retry = Retry(connect=3, backoff_factor=0.5)
