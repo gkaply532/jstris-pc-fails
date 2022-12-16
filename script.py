@@ -29,8 +29,7 @@ def get_pc_info_for_user(uname):
     res = session.get(pc_leaderboard_url, headers=headers)
 
     if res.status_code != 200:
-        print("fail")
-        exit()
+        sys.exit("fail")
     res_soup = BeautifulSoup(res.content, 'html.parser')
 
     #print(res_soup.prettify())
@@ -78,8 +77,7 @@ def show_stats(pc_pieces, uname=None):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python pc_fails.py <jstris username>")
-        exit()
+        sys.exit("Usage: python pc_fails.py <jstris username>")
     uname = sys.argv[1]
     #print(uname)
     pc_nums, pc_pieces = get_pc_info_for_user(uname)
